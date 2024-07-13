@@ -21,4 +21,8 @@ pub mod token_sale {
     ) -> Result<()> {
         init_auction::handler(ctx, init_auction_args)
     }
+
+    pub fn deposit_to_vault(ctx: Context<DepositToVault>, amount: u64) -> Result<()> {
+        deposit_to_vault::handler(ctx, amount)
+    }
 }
