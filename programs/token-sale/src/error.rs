@@ -8,4 +8,10 @@ pub enum AuctionError {
     AuctionEnded,
     #[msg("User is already in the whitelist")]
     UserAlreadyInWhitelist,
+    #[msg("Purchase limit exceeded")]
+    PurchaseLimitExceeded,
+    #[msg("Insufficient tokens in pool")]
+    InsufficientTokens,
+    #[msg("User not whitelisted")]
+    UserNotWhitelisted,
 }

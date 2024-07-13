@@ -16,7 +16,6 @@ pub struct Auction {
 pub struct TokenDetails {
     pub auction_token: Pubkey,
     pub tokens_in_pool: u64,
-    pub remaining_tokens: u64,
     pub purchase_limit: u64,
 }
 
@@ -25,7 +24,6 @@ impl Default for TokenDetails {
         Self {
             auction_token: Pubkey::default(),
             tokens_in_pool: 0,
-            remaining_tokens: 0,
             purchase_limit: 0,
         }
     }
@@ -63,7 +61,6 @@ impl Auction {
         self.end_time = params.end_time;
         self.token_details.auction_token = params.auction_token;
         self.token_details.tokens_in_pool = params.tokens_in_pool;
-        self.token_details.remaining_tokens = params.tokens_in_pool;
         self.token_details.purchase_limit = params.purchase_limit;
     }
 }

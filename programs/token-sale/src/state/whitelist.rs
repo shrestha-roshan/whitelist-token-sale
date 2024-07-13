@@ -32,4 +32,8 @@ impl Whitelist {
         }
         self.whitelist_addresses.retain(|x| !address.contains(x));
     }
+
+    pub fn is_whitelisted(&self, address: &Pubkey) -> bool {
+        self.whitelist_addresses.contains(address)
+    }
 }
