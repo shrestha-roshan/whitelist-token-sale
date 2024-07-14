@@ -18,6 +18,7 @@ pub struct DepositToVault<'info> {
         seeds = [AUCTION_VAULT.as_bytes(), auction.key().as_ref()],
         bump
     )]
+    /// CHECK: seeds has been checked
     pub auction_vault: AccountInfo<'info>,
     #[account(
         mut,

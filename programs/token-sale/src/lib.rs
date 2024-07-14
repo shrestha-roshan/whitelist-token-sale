@@ -37,4 +37,8 @@ pub mod token_sale {
     pub fn whitelist_buy(ctx: Context<WhitelistBuy>, amount: u64) -> Result<()> {
         whitelist_buy::handler(ctx, amount)
     }
+
+    pub fn withdraw_from_vault(ctx: Context<WithdrawFromVault>) -> Result<()> {
+        withdraw_from_vault::handler(ctx)
+    }
 }

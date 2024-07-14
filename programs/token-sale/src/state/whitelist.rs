@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 #[account]
 #[derive(InitSpace)]
 pub struct Whitelist {
-    #[max_len(5000)]
+    #[max_len(200)]
     pub whitelist_addresses: Vec<Pubkey>,
 }
 

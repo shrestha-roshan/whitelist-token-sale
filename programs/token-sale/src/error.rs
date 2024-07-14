@@ -6,6 +6,8 @@ pub enum AuctionError {
     CustomError,
     #[msg("Auction has already ended")]
     AuctionEnded,
+    #[msg("Auction time Invalid")]
+    InvalidAuctionTime,
     #[msg("User is already in the whitelist")]
     UserAlreadyInWhitelist,
     #[msg("Purchase limit exceeded")]

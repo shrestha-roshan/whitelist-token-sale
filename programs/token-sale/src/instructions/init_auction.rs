@@ -42,7 +42,6 @@ pub struct InitAuction<'info> {
     )]
     pub auciton_whitelist:Box<Account<'info, Whitelist>>,
     pub auction_token: Account<'info, Mint>,
-    pub rent: Sysvar<'info, Rent>,
     pub system_program: Program<'info, System>,
     pub token_program: Program<'info, Token>,
     pub associated_token_program: Program<'info, AssociatedToken>
@@ -50,11 +49,12 @@ pub struct InitAuction<'info> {
 
 #[derive(AnchorDeserialize, AnchorSerialize)]
 pub struct InitAuctionArgs {
-    pub name: String,
+    pub name: String,                   
     pub start_time: i64,
     pub end_time: i64,
     pub tokens_in_pool: u64,            // pool of total tokens
-    pub purchase_limit: u64,
+    pub purchase_limit: u64,  
+    pub price_per_token: u64,          
 }
 
 pub fn handler(ctx: Context<InitAuction>, args: InitAuctionArgs) -> Result<()> {
@@ -73,6 +73,7 @@ pub fn handler(ctx: Context<InitAuction>, args: InitAuctionArgs) -> Result<()> {
         end_time: args.end_time,
         tokens_in_pool: args.tokens_in_pool,
         purchase_limit: args.purchase_limit,
+        price_per_token: args.price_per_token,
     });
 
     Ok(())
